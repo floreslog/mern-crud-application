@@ -42,7 +42,7 @@ export const getAllUsers = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ 
-            errorMessage: `It was not possible to retrieve the users: ${error.message}`//500: internal server error
+            errorMessage: `It was not possible to retrieve the users: ${error.message}`
          }); 
     }
 };
@@ -65,7 +65,7 @@ export const getById = async(req, res) => {
 
     } catch (error) {
         res.status(500).json({ 
-            errorMessage: `It was not possible to retrieve the user: ${error.message}`//500: internal server error
+            errorMessage: `It was not possible to retrieve the user: ${error.message}`
          }); 
     }
 };
@@ -92,7 +92,34 @@ export const update = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ 
-            errorMessage: `It was not possible to update the user: ${error.message}`//500: internal server error
+            errorMessage: `It was not possible to update the user: ${error.message}`
+         }); 
+    }
+};
+
+//delete: user by id
+export const deleteUser = async (req, res) => {
+    try {
+      
+      const id = req.params.id;
+      const userExist = await User.findById(id);
+
+      if(!userExist) {
+        return res.status(404).json({
+          message: "User not found."
+        });
+      }
+
+      await User.findByIdAndDelete(id);
+      
+      res.status(200).json({
+        message: "User deleted sucessfully."
+      });
+
+
+    } catch (error) {
+        res.status(500).json({ 
+            errorMessage: `It was not possible to delete the user: ${error.message}`
          }); 
     }
 };
