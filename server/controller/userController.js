@@ -45,7 +45,7 @@ export const getAllUsers = async (req, res) => {
             errorMessage: `It was not possible to retrieve the users: ${error.message}`//500: internal server error
          }); 
     }
-}
+};
 
 //get: user by id
 export const getById = async(req, res) => {
@@ -66,6 +66,33 @@ export const getById = async(req, res) => {
     } catch (error) {
         res.status(500).json({ 
             errorMessage: `It was not possible to retrieve the user: ${error.message}`//500: internal server error
+         }); 
+    }
+};
+
+//put: update user by id
+export const update = async (req, res) => {
+    try {
+      
+      const id = req.params.id;
+      const userExist = await User.findById(id);
+
+      if(!userExist) {
+        return res.status(404).json({
+          message: "User not found."
+        });
+      }
+
+      const updatedData = await User.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
+
+      res.status(200).json(updatedData);
+
+
+    } catch (error) {
+        res.status(500).json({ 
+            errorMessage: `It was not possible to update the user: ${error.message}`//500: internal server error
          }); 
     }
 };
