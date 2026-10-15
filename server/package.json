@@ -4,7 +4,7 @@
   "description": "mern stack crud application",
   "license": "ISC",
   "author": "Flores",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
