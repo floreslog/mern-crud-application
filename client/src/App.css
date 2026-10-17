@@ -1,13 +1,40 @@
-* {
-    box-sizing: border-box;
+/* General page styles */
+
+.app {
+  min-height: 100vh;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* Centrado horizontal */
-    align-items: center;     /* Centrado vertical */
-    flex-direction: column;
-    text-align: center;
+.app > h1,
+.app > p,
+.user-section {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.app-description {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.user-section {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
 }
