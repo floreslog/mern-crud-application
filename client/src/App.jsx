@@ -14,6 +14,10 @@ function App() {
       path: "/add",
       element: <AddUser/>
     },
+    {
+      path: "/update/:id",
+      element: <Update />
+    },
   ]);
 
   return (
