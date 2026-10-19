@@ -1,7 +1,14 @@
 import './App.css';
 import User from './get-user/User.jsx'
+import { RouterProvider, createBrowserRouter} from "react-router-dom";
 
 function App() {
+
+  const route = createBrowserRouter([{
+    path: "/",
+    element: <User/>
+  }]);
+
   return (
     <main className="app">
       <h1 className="app-title">Users list</h1>
@@ -10,7 +17,7 @@ function App() {
       </p>
 
       <section className="user-section">
-        <User />
+        <RouterProvider router={route}></RouterProvider>
       </section>
     </main>
   );
