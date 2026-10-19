@@ -17,19 +17,6 @@
   margin-right: auto;
 }
 
-.app-title {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 28px;
-}
-
-.app-description {
-  margin-top: 0;
-  margin-bottom: 24px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
 .user-section {
   box-sizing: border-box;
   padding: 20px;
