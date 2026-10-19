@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './User.css';
-import { Pencil, Trash2, Plus, Link } from 'lucide-react';
+import { Pencil, Trash2, Plus } from 'lucide-react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export function User (){
 
@@ -71,7 +72,7 @@ export function User (){
       </table>
 
       <div className="user-actions-footer">
-        <Link className="btn-new-user" onClick="">
+        <Link to="/add" className="btn-new-user">
           <Plus size={18} />
           <span>New user</span>
         </Link>
