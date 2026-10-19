@@ -1,3 +1,7 @@
+.user-container {
+  width: 100%;
+}
+
 .user-table {
   width: 100%;
   border-collapse: collapse;
@@ -28,4 +32,73 @@
 
 .user-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.btn-edit:hover {
+  background-color: #bfdbfe;
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background-color: #fecaca;
+}
+
+.user-actions-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.btn-new-user {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-new-user:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-edit:focus-visible,
+.btn-delete:focus-visible,
+.btn-new-user:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
