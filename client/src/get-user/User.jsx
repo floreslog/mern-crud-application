@@ -25,6 +25,7 @@ export function User (){
 
     return(
     <div className="user-container">
+      <h1>Users List</h1>
       <table className="user-table">
         <thead>
           <tr>
