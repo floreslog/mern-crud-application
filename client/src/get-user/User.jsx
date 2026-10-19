@@ -47,14 +47,14 @@ export function User (){
                 <td>{user.address}</td>
                 <td>
                   <div className="action-buttons">
-                    <button
+                    <Link
+                      to={`/update/${user._id}`}
                       className="btn-edit"
-                      onClick=""
                       title="Editar usuario"
                       aria-label="Editar usuario"
                     >
                       <Pencil size={17} />
-                    </button>
+                    </Link>
 
                     <button
                       className="btn-delete"
