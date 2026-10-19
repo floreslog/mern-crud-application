@@ -12,7 +12,7 @@ function App() {
     {
       path: "/add",
       element: <AddUser/>
-    }
+    },
   ]);
 
   return (
