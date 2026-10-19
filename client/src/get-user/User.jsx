@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 import './User.css';
 import { Pencil, Trash2, Plus } from 'lucide-react';
 import axios from "axios";
@@ -38,51 +38,60 @@ export function User (){
     return(
     <div className="user-container">
       <h1>Users List</h1>
-      <table className="user-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          {users.map((user, index) => {
-            return (
-              <tr>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.address}</td>
-                <td>
-                  <div className="action-buttons">
-                    <Link
-                      to={`/update/${user._id}`}
-                      className="btn-edit"
-                      title="Editar usuario"
-                      aria-label="Editar usuario"
-                    >
-                      <Pencil size={17} />
-                    </Link>
+      {users.length === 0?(
+        <div className="noData">
+          <h3>No data to display.</h3>
+          <p>Please add a new user.</p>
+        </div>
+      ):(
+        <table className="user-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
 
-                    <button
-                      className="btn-delete"
-                      onClick={() => deleteUser(user._id)}
-                      title="Borrar usuario"
-                      aria-label="Borrar usuario"
-                    >
-                      <Trash2 size={17} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          <tbody>
+            {users.map((user, index) => {
+              return (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.address}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <Link
+                        to={`/update/${user._id}`}
+                        className="btn-edit"
+                        title="Editar usuario"
+                        aria-label="Editar usuario"
+                      >
+                        <Pencil size={17} />
+                      </Link>
+
+                      <button
+                        className="btn-delete"
+                        onClick={() => deleteUser(user._id)}
+                        title="Borrar usuario"
+                        aria-label="Borrar usuario"
+                      >
+                        <Trash2 size={17} />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+
 
       <div className="user-actions-footer">
         <Link to="/add" className="btn-new-user">
