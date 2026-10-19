@@ -90,7 +90,10 @@ export const update = async (req, res) => {
         new: true,
       });
 
-      res.status(200).json(updatedData);
+      //res.status(200).json(updatedData);
+      res.status(200).json({
+        message: "User updated successfully."
+      });
 
 
     } catch (error) {
