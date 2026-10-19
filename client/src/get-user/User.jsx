@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './User.css';
-import { Pencil, Trash2, Plus } from 'lucide-react';
+import { Pencil, Trash2, Plus, Link } from 'lucide-react';
 import axios from "axios";
 
 export function User (){
@@ -71,10 +71,10 @@ export function User (){
       </table>
 
       <div className="user-actions-footer">
-        <button className="btn-new-user" onClick="">
+        <Link className="btn-new-user" onClick="">
           <Plus size={18} />
           <span>New user</span>
-        </button>
+        </Link>
       </div>
     </div>
     );
